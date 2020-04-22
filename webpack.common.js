@@ -39,11 +39,7 @@ module.exports = [
     },
     module: TS_MODULE,
     resolve: {
-      extensions: [
-        '.ts',
-        '.tsx',
-        '.js', // node_modulesのライブラリ読み込みに必要
-      ],
+      extensions: ['.ts', '.tsx', '.js'],
     },
     plugins: [
       new CleanWebpackPlugin({
@@ -51,25 +47,18 @@ module.exports = [
       }),
     ],
   },
-  // {
-  //   target: 'electron-renderer',
-  //   entry: './src/renderer/index.tsx', // 起点となるファイル
-  //   // development は、 source map file を作成、再ビルド時間の短縮などの設定となる
-  //   // production は、コードの圧縮やモジュールの最適化が行われる設定となる
-  //   mode: 'development', // "production" | "development" | "none"
-  //   devtool: 'source-map', // ソースマップのタイプ
-  //   // 出力先設定 __dirname は node でのカレントディレクトリのパスが格納される変数
-  //   output: {
-  //     path: path.join(__dirname, 'app', 'generated'),
-  //     filename: 'renderer.js',
-  //   },
-  //   module: TS_MODULE,
-  //   resolve: {
-  //     extensions: [
-  //       '.ts',
-  //       '.tsx',
-  //       '.js', // node_modulesのライブラリ読み込みに必要
-  //     ],
-  //   },
-  // },
+  {
+    target: 'electron-renderer',
+    entry: './src/renderer/index.tsx',
+    mode: 'development',
+    devtool: 'source-map',
+    output: {
+      path: path.join(__dirname, 'app', 'generated'),
+      filename: 'renderer.js',
+    },
+    module: TS_MODULE,
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js'],
+    },
+  },
 ];
