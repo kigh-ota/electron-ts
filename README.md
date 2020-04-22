@@ -1,5 +1,3 @@
 # electron-ts
 
-## TODO
-
-- Try Cypress for UI testing
+[![CircleCI](https://circleci.com/gh/kigh-ota/electron-ts.svg?style=svg)](https://circleci.com/gh/kigh-ota/electron-ts)
