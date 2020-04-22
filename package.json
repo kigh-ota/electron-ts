@@ -8,7 +8,7 @@
     "watch:dev": "concurrently \"webpack --watch --config webpack.dev.js\" \"tsc -w --noEmit\"",
     "build:dev": "tsc --noEmit && webpack --config webpack.dev.js",
     "build:prod": "tsc --noEmit && webpack --config webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "mocha --require ts-node/register './src/e2e/**/*.spec.ts'",
     "lint": "eslint 'src/**/*.ts{x,}'"
   },
   "author": "kigh-ota",
@@ -52,6 +52,8 @@
     "lint-staged": "10.1.7",
     "mocha": "7.1.1",
     "prettier": "2.0.5",
+    "spectron": "10.0.1",
+    "ts-node": "8.9.0",
     "typescript": "3.8.3",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11",
